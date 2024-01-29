@@ -16,14 +16,38 @@
 ## Iteratorパターン
 「一つずつ順番にアクセスする」を抽象化した概念。  
 データの持ち方や処理の仕方に依存せず、「順番にアクセスする」という部分のみを実装する。
+ConcreteIteratorがConcreteAggregateの実装に依存するのは仕方ない。暗黙的に依存するくらいなら依存関係作っちゃった方が良い。
 ### 登場する役
-- Iterator（interface）
-  順次アクセスするためのインターフェース。
-  - next() : object
-  - hasNext() : bool
-- Aggregate（interface）
-  順次アクセス可能な集合体であることを表すインターフェース。
-  - iterator() : Iterator
-- ConcreteIterator（class）
-  Iteratorを実装するクラス。集合の元一つ一つを知っている必要がある。
-  - Aggregate
+- Iterator（interface）  
+  - 順次アクセスするためのインターフェース。
+  - next()とhasNext()がある。
+- Aggregate（interface）  
+  - 順次アクセス可能な集合体であることを表すインターフェース。
+  - イテレータを持っている。
+- ConcreteElement（class）  
+  - 集合の元のクラス。
+  - intとかでもOK。
+- ConcreteAgregator（class）  
+  - 集合の実態を持ったクラス。
+  - 集合はListや配列に限らず、「次」が定義されてればなんでもOK。
+- ConcreteIterator（class）  
+  - Iteratorを実装するクラス。
+  - 集合クラスを知っている必要がある。
+
+## Adapterパターン
+すでに提供されているものを使う際に良い感じにつなぎ合わせたり、別の機能として同じ処理をしたいときに良い感じに使ったりできるパターン。  
+直でもともとあるクラスの関数を使うのに比べて、名前を自由に付け替えれるのが強み。  
+それによって同じ処理を「別機能として」使うことが可能。  
+再利用性がめちゃ上がる。
+### 登場する役
+- Target（class or interface）
+  - 今必要な処理があるクラスやインターフェース。
+  - これがクラスの場合とインターフェースの場合で敬称を使うか委譲を使うかが分かれる。
+- Client（function）
+  - Targetを使って何かしたい人。
+  - Mainであることが多そう？
+- Adaptee（class）
+  - Targetの処理として実装したい処理をすでに持っているクラス
+- Adapter（class）
+  - Targetの必要な機能をAdapteeの機能を使って再現するクラス。
+  - 継承パターンか委譲パターンかで若干変わる

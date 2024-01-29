@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace IteratorPattern{
 	//具体的な集合のクラス
 	class BookShelf : Aggregate{
-		public List<Book> books;
+		private List<Book> books;
 		public BookShelf(){
 			this.books = new List<Book>();
 		}
@@ -16,6 +16,12 @@ namespace IteratorPattern{
 		}
 		public void AddBook(){
 			this.books.Add(new Book());
+		}
+		public int Size(){
+			return this.books.Count;
+		}
+		public Book getAt(int i){
+			return this.books[i];
 		}
 	}
 }
