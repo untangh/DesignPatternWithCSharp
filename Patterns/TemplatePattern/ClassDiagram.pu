@@ -1,6 +1,6 @@
 @startuml
 class AbstractClass{
-	+void : templateMethod()
+	+templateMethod() : void
 }
 
 class ConcreteClass{

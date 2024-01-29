@@ -1,6 +1,6 @@
 @startuml
 class Creator{
-	+void : templateCreate()
+	+templateCreate() : void
 }
 
 class Product{

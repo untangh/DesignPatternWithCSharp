@@ -1,18 +1,18 @@
 @startuml
 title クラス図
 interface Aggregate{
-	Iterator : iterator()
+	iterator() : Iterator
 }
 interface Iterator{
-	bool : hasNext()
-	object : next()
+	hasNext() : bool
+	next() : object
 }
 class ConcreteAggregate{
-	+Iterator iterator();
+	+iterator() : Iterator
 }
 class ConcreteIterator{
-	+bool hasNext();
-	+object next();
+	+hasNext() : bool
+	+next() : object
 }
 class ConcreteElement{
 
