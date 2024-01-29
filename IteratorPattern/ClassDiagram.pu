@@ -1,0 +1,25 @@
+@startuml
+title クラス図
+interface Aggregate{
+	Iterator iterator();
+}
+interface Iterator{
+	bool hasNext();
+	object next();
+}
+class ConcreteAggregate{
+	+Iterator iterator();
+}
+class ConcreteIterator{
+	+bool hasNext();
+	+object next();
+}
+class ConcreteElement{
+
+}
+Aggregate <|... ConcreteAggregate
+Iterator <|... ConcreteIterator
+Iterator <-o Aggregate
+ConcreteAggregate o--> ConcreteElement
+ConcreteIterator o-> ConcreteAggregate
+@enduml
