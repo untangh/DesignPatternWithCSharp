@@ -102,4 +102,4 @@ CreatorのCreateメソッドをTemplateメソッドと見立てればTemplatePat
   - それ以外 : パスカル
 - メソッド名：パスカル
 - その他
-  - 変数の命名は「codic」(https://codic.jp/engine)も参考に
+  - 変数の命名は「[codic](https://codic.jp/engine)」も参考に
