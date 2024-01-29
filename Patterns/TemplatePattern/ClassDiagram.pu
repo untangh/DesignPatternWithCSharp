@@ -1,0 +1,11 @@
+@startuml
+class AbstractClass{
+	+void : templateMethod()
+}
+
+class ConcreteClass{
+
+}
+
+AbstractClass <|-- ConcreteClass
+@enduml

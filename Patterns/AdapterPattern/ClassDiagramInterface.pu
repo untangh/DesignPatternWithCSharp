@@ -1,0 +1,17 @@
+@startuml
+class Client{
+
+}
+interface Target{
+
+}
+class Adapter{
+	
+}
+class Adaptee{
+
+}
+Client o--> Target
+Target <. Adapter
+Adapter o-> Adaptee
+@enduml
