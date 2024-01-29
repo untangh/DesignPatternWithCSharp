@@ -51,3 +51,13 @@ ConcreteIteratorがConcreteAggregateの実装に依存するのは仕方ない�
 - Adapter（class）
   - Targetの必要な機能をAdapteeの機能を使って再現するクラス。
   - 継承パターンか委譲パターンかで若干変わる
+
+## Templateパターン
+関数の具体的な実装をサブクラスに任せるパターン。  
+virtualを使うというだけでなく、処理の流れをまとめた関数は作っておくというのが特徴。
+### 登場する役
+- AbstractClass
+  - 処理の流れだけを定義している抽象クラス。
+  - 処理の流れのみをまとめた関数ははTemplate関数と呼ばれる。
+- ConcreteClass
+  - 具体的な処理の中身を実装しているクラス。
