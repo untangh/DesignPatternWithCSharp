@@ -24,6 +24,8 @@
 		- [登場する役](#登場する役-3)
 	- [Singletonパターン](#singletonパターン)
 		- [登場する役](#登場する役-4)
+	- [Prototypeパターン](#prototypeパターン)
+		- [登場する役](#登場する役-5)
 	- [コーディング規則について](#コーディング規則について)
 
 ## Iteratorパターン
@@ -106,6 +108,23 @@
 - Singleton（class）
   - 常に一つだけ存在したいようなクラス。
 
+## Prototypeパターン
+- すでにあるインスタンスから新しいインスタンスを作成するパターン。
+- コピーコンストラクタがあればよさそうな気もするが、interfaceとしてPrototypeインターフェースを作っておくことが大事なんだと思う。
+- 明示的にパターンを用いるという意味で。
+- Prototype内にCloneのほかにも必要最小限の関数を入れて、「Product」、みたいなインターフェースにしてもいいかも？
+- 全体に言えることだが、具体的なクラス名が出てこない抽象的なメソッドやクラスの作成は、再利用性という観点で作りまくるとよい。
+- 現在作っている処理に必要な最小限のクラスは何かということを意識するとよい。
+### 登場する役
+- Prototype（interface）
+  - ICloneableという名前でもいいかもしれない。
+  - デフォルトであるけど非推奨っぽい。
+- ConcretePrototype（class）
+  - Prototypeの実装を行うクラス。
+- Client（class）
+  - Prototypeを使うクラス。
+  - Prototypeのテスト以外はPrototypeを直で使うことは少ないと思う。
+  - ICopyableのみが必要な場面は少ないだろう。
 
 ## コーディング規則について
 - 基本的には以下の[C#での命名規則](https://marunaka-blog.com/csharp-naming-conventions/5680/#google_vignette)を参照
