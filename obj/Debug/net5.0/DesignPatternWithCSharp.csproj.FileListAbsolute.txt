@@ -1,0 +1,16 @@
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\bin\Debug\net5.0\DesignPatternWithCSharp.exe
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\bin\Debug\net5.0\DesignPatternWithCSharp.deps.json
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\bin\Debug\net5.0\DesignPatternWithCSharp.runtimeconfig.json
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\bin\Debug\net5.0\DesignPatternWithCSharp.runtimeconfig.dev.json
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\bin\Debug\net5.0\DesignPatternWithCSharp.dll
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\bin\Debug\net5.0\ref\DesignPatternWithCSharp.dll
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\bin\Debug\net5.0\DesignPatternWithCSharp.pdb
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\obj\Debug\net5.0\DesignPatternWithCSharp.csproj.AssemblyReference.cache
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\obj\Debug\net5.0\DesignPatternWithCSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\obj\Debug\net5.0\DesignPatternWithCSharp.AssemblyInfoInputs.cache
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\obj\Debug\net5.0\DesignPatternWithCSharp.AssemblyInfo.cs
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\obj\Debug\net5.0\DesignPatternWithCSharp.csproj.CoreCompileInputs.cache
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\obj\Debug\net5.0\DesignPatternWithCSharp.dll
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\obj\Debug\net5.0\ref\DesignPatternWithCSharp.dll
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\obj\Debug\net5.0\DesignPatternWithCSharp.pdb
+C:\Users\hoppii\Desktop\GitHub\DesignPatternWithCSharp\obj\Debug\net5.0\DesignPatternWithCSharp.genruntimeconfig.cache
