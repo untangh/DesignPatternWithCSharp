@@ -1,7 +1,7 @@
 using System;
 
 namespace PrototypePattern {
-	class Monster : Prototype{
+	class Monster : MonsterPrototype{
 		string name;
 		int hitPoint;
 		int attackPower;
@@ -21,8 +21,8 @@ namespace PrototypePattern {
 			}
 		}
 
-		public Prototype Clone(){
-			return new Monster(this.name+"Clone",this.hitPoint,this.attackPower);
+		public MonsterPrototype Clone(){
+			return new Monster(this.name,this.hitPoint,this.attackPower);
 		}
 		public void ShowParameter(){
 			Console.WriteLine($"名前：{this.name}");
