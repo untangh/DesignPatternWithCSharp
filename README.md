@@ -12,6 +12,9 @@
 
 ## 目次
 [Iteratorパターン](#teratorパターン)
+[Adapterパターン](#adapterパターン)
+[Templateパターン](#templateパターン)
+[コーディング規則について](#コーディング規則について)
 
 ## Iteratorパターン
 「一つずつ順番にアクセスする」を抽象化した概念。  
@@ -61,3 +64,40 @@ virtualを使うというだけでなく、処理の流れをまとめた関数�
   - 処理の流れのみをまとめた関数ははTemplate関数と呼ばれる。
 - ConcreteClass
   - 具体的な処理の中身を実装しているクラス。
+
+## FactoryMethodパターン
+インスタンスの生成を担当するクラスを持っておくパターン。  
+利点は生成時の処理が重い（またはそれがメイン）の場合に、インスタンス生成を請け負うクラスを持って置けること。  
+例えば敵キャラの生成で、画面の敵をランダムに出現させたいとする。  
+CreatorのCreateメソッドをTemplateメソッドと見立てればTemplatePatternをクラスの生成に適用したものと考えることもできる。
+### 登場する役
+- Creator（class）
+  - productを作るための抽象クラス。
+  - ここにproduct作成時のTemplateメソッドを書いておく
+- ConcreteCreator（class）
+  - 実際にproductを作成する。
+  - どのproductでも共通して行いたい処理はCreatorのTemplateメソッドに書いてあるため、個別のproductごとのコンストラクタ的な奴を作ればOK。
+- Product（class）
+  - 複数ある可能性のあるプロダクト。
+  - 例ではUse()が定義されているが、あってもなくてもOK。
+- ConcreteProduct（class）
+  - 具体的なProductを実装するクラス。
+  - コンストラクタは内部的なことだけでOK。
+  - 例えば外部の配列に自分を登録したりとかはCreatorがやるからいい。
+
+
+## コーディング規則について
+- 基本的には以下の[C#での命名規則](https://marunaka-blog.com/csharp-naming-conventions/5680/#google_vignette)を参照
+- 省略は基本しない。スマートさより理解しやすさ。
+- クラス名：パスカル
+- インターフェース名：パスカルケース　＆　先頭にI（大文字i）
+- メンバ変数
+  - 基本的に名詞を使う
+  - private : キャメル
+  - それ以外 : パスカル
+- フィールド名
+  - private : キャメル
+  - それ以外 : パスカル
+- メソッド名：パスカル
+- その他
+  - 変数の命名は「codic」(https://codic.jp/engine)も参考に
