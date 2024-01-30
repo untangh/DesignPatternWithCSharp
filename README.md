@@ -142,6 +142,9 @@
 - FactoryMethodPatternとの違いは、Product内部の生成処理が重いか、外部の生成処理が重いか。
 - Prototypeパターンでもそうだったが、DirectorとかManagerとかはAdapterの役割を果たしているとも考えられる。
 - 例の文書作成だとTemplateパターンも使えそうだったから使っといた。
+  - Builderクラス（インターフェース）に構築の際のTemplateを作らなくても、Directorが隠蔽すればOK。
+  - 「構築の全体像」という役割をBuilderが負うかDirectorが負うかという違い。
+    - こう書いてるとDirectorが負った方が良い気がしてきた。
 - ClientがDirectorもConcreteBuilderも知ってないといけないのが若干気になる。
   - FactoryMethodと上手く組み合わせれば何とかなりそう。
   - ConcreteBuilderを作るFactoryを作っとくとか。
