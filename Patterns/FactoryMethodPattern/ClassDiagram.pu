@@ -1,22 +1,27 @@
 @startuml
-class Creator{
-	+templateCreate() : void
+package Abstract {
+	class Creator{
+		+templateCreate() : void
+	}
+
+	class Product{
+
+	}
 }
 
-class Product{
+package Concrete {
+	class ConcreteCreator{
 
+	}
+
+	class ConcreteProduct{
+
+	}
 }
 
-class ConcreteCreator{
 
-}
-
-class ConcreteProduct{
-
-}
-
-Creator -> Product : Create(インスタンス化はしない)
+Creator -> Product : Use
 Creator <|-- ConcreteCreator
 Product <|-- ConcreteProduct
-ConcreteCreator -> ConcreteProduct : Create(インスタンス化する)
+ConcreteCreator -> ConcreteProduct : Create
 @enduml

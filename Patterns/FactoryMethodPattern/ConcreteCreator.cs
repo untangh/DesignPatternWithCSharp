@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace FactoryMethodPattern{
 	//Creatorの具体的な作成処理を実装するクラス
 	//実質Productorのコンストラクタをここでやる（？）
+	//Productの集約をここでやるのは納得できませんな。
 	class IDCardFactory : Factory{
 		List<Product> products;
 		public IDCardFactory(){

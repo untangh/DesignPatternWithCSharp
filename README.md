@@ -28,6 +28,7 @@
 		- [登場する役](#登場する役-5)
 	- [Builderパターン](#builderパターン)
 		- [登場する役](#登場する役-6)
+	- [AbstractFactoryパターン](#abstractfactoryパターン)
 	- [コーディング規則について](#コーディング規則について)
 	- [UMLについて](#umlについて)
 
@@ -90,6 +91,10 @@
 - CreatorのCreateメソッドをTemplateメソッドと見立てればTemplatePatternをクラスの生成に適用したものと考えることもできる。
 - Productのクラスが大局観を持たなくてもよい。
   - Productを作成したら別の○○クラスに通知して登録して～みたいな、他クラスに依存する処理が多いときにそれを請け負うFactoryクラスを作ることで、Productがそれ以外と切り離せる。
+- 例で、ConcreteFactoryクラスがProductのリストを持ってるのは感心しない。
+- Factoryはインスタンスの生成のみを請け負うべきで、それらを管理するなら管理する用のクラスを作るべき。
+  - と思ってたけど、FactoryMethodはあくまでインスタンス生成を別のやつに任せるのが良いらしい。
+- CreatorはProductをUseするだけにしたい！
 ### 登場する役
 - Creator（class）
   - productを作るための抽象クラス。
@@ -163,6 +168,14 @@
 - Client（class）
   - Builderを使用するクラス。
 
+## AbstractFactoryパターン
+- 抽象的な工場、プロダクト、部品を全部抽象で作ってしまうパターン。
+- これだけ抽象度を上げることで新しい具体的な工場を追加することは簡単。
+- 逆に、全ての動きをある程度抽象的に定めてしまうため、部品の追加には弱い。
+- FactoryMethodパターンとの違いは、FactoryMethodパターンはCreatorでProductをインスタンス化しないことが重要。AbstractFactoryパターンはProductを組み合わせて1つの複雑なProductを作るときに、それを丸ごとモジュール化する。
+- Client視点になると、Concreteを気にしなくていいのが偉い。
+- GAをClientとして「ゲーム」の骨組みをAbstractFactoryで作ればいろいろできそう。
+
 ## コーディング規則について
 - 基本的には以下の[C#での命名規則](https://marunaka-blog.com/csharp-naming-conventions/5680/#google_vignette)を参照
 - 省略は基本しない。スマートさより理解しやすさ。
@@ -188,6 +201,9 @@
   - 「インスタンス化はするが、保持しない」ような関係。
   - 例えばあるクラスをインスタンスするが、スーパークラスのインスタンスとして保持する場合はこれになる。
   - ここでCreate先のコンストラクタ以外が変更されても気にしないでいられる。
+- 弱Create
+  - 引数の構造を知らなくてもいいようなCreateの関係。
+  - Factory系はこれ。
 - 継承
   - クラスの継承を表す。
   - SOLID原則のLのやつに気を付けて。

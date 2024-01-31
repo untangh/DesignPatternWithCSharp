@@ -1,0 +1,35 @@
+@startuml
+package Abstract {
+	abstract class Factory {
+		+ Create : Product1
+		+ Create : Product2
+	}
+	abstract class Product1 {
+
+	}
+	abstract class Product2 {
+		
+	}
+}
+
+package Concrete {
+	class ConcreteFactory {
+		+ Create : Product1
+		+ Create : Product2
+	}
+	class ConcreteProduct1 {
+
+	}
+	class ConcreteProduct2 {
+
+	}
+}
+
+Product1 <-- Factory : Create
+Product2 <-- Factory : Create
+Factory <|-- ConcreteFactory
+ConcreteProduct1 <-- ConcreteFactory : Create
+ConcreteProduct2 <-- ConcreteFactory : Create
+Product1 <|--- ConcreteProduct1
+Product2 <|--- ConcreteProduct2
+@enduml
