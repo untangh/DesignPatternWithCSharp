@@ -8,6 +8,8 @@ namespace AbstractFactoryPattern {
 		int stone;
 		int height;
 		int width;
+		//ゲッター：見るだけ
+		//セッター：盤面の範囲内ならセット、そうじゃなければエラーメッセージ
 		public int I{
 			get{ return this.i; }
 			set{
@@ -52,6 +54,13 @@ namespace AbstractFactoryPattern {
 		public override void ApplyAction(Action action){
 			OthelloAction othelloAction = (OthelloAction)action;
 			this.board[othelloAction.I,othelloAction.J] = othelloAction.Stone;
+		}
+	}
+
+	class OthelloActorRandomPut : Actor {
+		public OthelloActorRandomPut(int id):base(id){}
+		public override Action ChooseActionOfTurn(Environment environment){
+			
 		}
 	}
 }
